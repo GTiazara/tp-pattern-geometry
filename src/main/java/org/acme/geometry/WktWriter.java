@@ -6,12 +6,12 @@ public class WktWriter {
 
     public String write(Geometry geom)
     {
-        if (geom.getType() == "POINT")
+        if (geom instanceof Point)
         {
             Point p = (Point) geom;
             return ("POINT(" + p.getCoordinate().getX() + " " +  p.getCoordinate().getY() + ")");
         }
-        else if (geom.getType() == "LINESTRING")
+        else if ( geom instanceof LineString)
         {
             LineString ls = (LineString) geom;
             String pointCoord= "";
