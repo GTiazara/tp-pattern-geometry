@@ -30,7 +30,7 @@ public class WktWriter {
 
             }
 
-            System.out.println("LINESTRING(" + pointCoord +  ")");
+            //System.out.println("LINESTRING(" + pointCoord +  ")");
 
 
             return ("LINESTRING(" + pointCoord +  ")");

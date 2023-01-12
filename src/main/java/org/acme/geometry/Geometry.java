@@ -12,4 +12,7 @@ public interface Geometry {
 
     public Geometry clone();
     public Enveloppe getEnvelope();
+
+    public void accept(GeometryVisitor geovisit);
+
 }

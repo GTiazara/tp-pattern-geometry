@@ -70,4 +70,9 @@ public class LineString implements Geometry{
 
         return (envpBuild.build());
     }
+
+    @Override
+    public void accept(GeometryVisitor geovisit) {
+        geovisit.visit(this);
+    }
 }
