@@ -36,6 +36,4 @@ public class PointTest {
         Point p = new Point(c);
         Assert.assertEquals(c,p.getCoordinate());
     }
-
-
 }
