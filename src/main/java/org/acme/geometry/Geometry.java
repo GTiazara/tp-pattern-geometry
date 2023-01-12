@@ -1,5 +1,7 @@
 package org.acme.geometry;
 
+import java.util.EnumMap;
+
 public interface Geometry {
 
     public String getType();
@@ -9,4 +11,5 @@ public interface Geometry {
     public void translate(double dx, double dy);
 
     public Geometry clone();
+    public Enveloppe getEnvelope();
 }

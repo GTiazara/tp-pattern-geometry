@@ -59,4 +59,15 @@ public class LineString implements Geometry{
         }
         return ls;
     }
+
+    @Override
+    public Enveloppe getEnvelope() {
+        EnvelopeBuilder envpBuild = new EnvelopeBuilder();
+        for(Point p: this.points)
+        {
+            envpBuild.insert(p.getCoordinate());
+        }
+
+        return (envpBuild.build());
+    }
 }
