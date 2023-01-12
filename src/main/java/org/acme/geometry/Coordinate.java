@@ -28,4 +28,5 @@ public class Coordinate {
     {
         return (Double.isNaN(this.getX()) || Double.isNaN(this.getY()));
     }
+
 }

@@ -38,7 +38,7 @@ public class LineStringTest {
         List<Point> lp= Arrays.asList(p1, p2, p3);
 
         LineString ls = new LineString(lp);
-        Assert.assertEquals(p3,ls.getPointN(2));
+        Assert.assertSame(p3,ls.getPointN(2));
 
     }
 
@@ -48,5 +48,38 @@ public class LineStringTest {
         Assert.assertEquals("LINESTRING",ls.getType());
     }
 
+    @Test
+    public void testTranslate(){
+        Point p1 = new Point( new Coordinate(2.0, 2.2));
+        Point p2 = new Point( new Coordinate(3.0, 4.2));
+        Point p3 = new Point( new Coordinate(8.0, 2.2));
+        List<Point> lp= Arrays.asList(p1, p2, p3);
 
+        LineString ls = new LineString(lp);
+        ls.translate(1.0, 1.0);
+
+        Point p1Trans = new Point( new Coordinate(3.0, 3.2));
+        Point p2Trans  = new Point( new Coordinate(4.0, 5.2));
+        Point p3Trans  = new Point( new Coordinate(9.0, 3.2));
+
+        Assert.assertTrue(ls.getPointN(0).getCoordinate().getX() == p1Trans.getCoordinate().getX()
+                && ls.getPointN(1).getCoordinate().getX() == p2Trans.getCoordinate().getX()
+                && ls.getPointN(2).getCoordinate().getX() == p3Trans.getCoordinate().getX()
+        );
     }
+
+    @Test
+    public void testClone(){
+        Point p1 = new Point( new Coordinate(2.0, 2.2));
+        Point p2 = new Point( new Coordinate(3.0, 4.2));
+        Point p3 = new Point( new Coordinate(8.0, 2.2));
+        List<Point> lp= Arrays.asList(p1, p2, p3);
+
+        LineString ls = new LineString(lp);
+        LineString lsClone = ls.clone();
+
+        Assert.assertNotEquals(ls,lsClone);
+    }
+
+
+}

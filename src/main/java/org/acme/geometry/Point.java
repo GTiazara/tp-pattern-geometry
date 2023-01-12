@@ -12,6 +12,7 @@ public class Point implements Geometry{
         this.coordinate = coordinate;
     }
 
+
     @Override
     public String getType() {
         return "POINT";
@@ -22,19 +23,26 @@ public class Point implements Geometry{
         return this.coordinate.isEmpty();
     }
 
-    public Coordinate getCoordinate() {
-        return coordinate;
+    @Override
+    public void translate(double dx, double dy) {
+
+        this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
     }
 
-    public void setCoordinate(Coordinate coordinate) {
-        this.coordinate = coordinate;
+    @Override
+    public Point clone() {
+        return new Point(this.coordinate);
+    }
+
+    public Coordinate getCoordinate() {
+        return this.coordinate;
     }
 
     public void checkEmptyCoordinate()
     {
         if (this.isEmpty())
         {
-            this.setCoordinate(new Coordinate(0.0, 0.0));
+            this.coordinate = new Coordinate(0.0, 0.0);
         }
     }
 }
