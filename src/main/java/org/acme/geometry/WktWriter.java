@@ -35,6 +35,8 @@ public class WktWriter {
 
             return ("LINESTRING(" + pointCoord +  ")");
         }
-        else return ("Empty");
+    else{
+        throw new RuntimeException("geometry type not supported");
+    }
     }
 }
