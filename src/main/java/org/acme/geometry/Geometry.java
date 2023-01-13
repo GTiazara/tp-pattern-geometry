@@ -10,7 +10,7 @@ public interface Geometry {
 
     public void translate(double dx, double dy);
 
-    public Geometry clone();
+    //public Geometry clone();
     public Enveloppe getEnvelope();
 
     public void accept(GeometryVisitor geovisit);

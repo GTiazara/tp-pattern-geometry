@@ -76,7 +76,7 @@ public class LineStringTest {
         List<Point> lp= Arrays.asList(p1, p2, p3);
 
         LineString ls = new LineString(lp);
-        LineString lsClone = ls.clone();
+        LineString lsClone = (LineString) ls.clone();
 
         Assert.assertNotEquals(ls,lsClone);
     }

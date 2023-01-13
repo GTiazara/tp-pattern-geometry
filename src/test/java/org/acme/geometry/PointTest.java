@@ -61,7 +61,7 @@ public class PointTest {
         Coordinate c1 = new Coordinate(2.0, 2.2);
         Point p1 = new Point(c1);
 
-        Point p2 = p1.clone();
+        Point p2 = (Point)p1.clone();
         p2.translate(2.0, 2.0);
 
         Assert.assertNotEquals(p1,p2);

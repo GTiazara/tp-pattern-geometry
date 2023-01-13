@@ -3,7 +3,7 @@ package org.acme.geometry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LineString implements Geometry{
+public class LineString extends AbstractGeometry{
     private List<Point> points;
     public LineString()
     {
@@ -50,6 +50,7 @@ public class LineString implements Geometry{
             }
         }
     }
+    /*
     @Override
     public LineString clone() {
         LineString ls = new LineString();
@@ -58,7 +59,7 @@ public class LineString implements Geometry{
             ls.points.add(p.clone());
         }
         return ls;
-    }
+    }*/
 
     @Override
     public Enveloppe getEnvelope() {
